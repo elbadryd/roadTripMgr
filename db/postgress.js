@@ -1,9 +1,19 @@
 const pg = require('pg');
+const dotenv = require('dotenv');
 
-// const connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/todo';
-
-// const client = new pg.Client(connectionString);
-// client.connect();
-// const query = client.query(
-//   'CREATE TABLE items(id SERIAL PRIMARY KEY, text VARCHAR(40) not null, complete BOOLEAN)');
-// query.on('end', () => { client.end(); });
+const conString = process.env.DATABASE_URL; // Can be found in the Details page
+const client = new pg.Client(conString);
+client.connect((error) => {
+  if (error) {
+    console.log(conString);
+    console.error('could not connect to postgres', error);
+  }
+  client.query('SELECT NOW() AS "theTime"', (err, result) => {
+    if (err) {
+      console.error('error running query', err);
+    }
+    console.log(result.rows[0].theTime);
+    // >> output: 2018-08-23T14:02:57.117Z
+    client.end();
+  });
+});
