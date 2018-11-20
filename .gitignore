@@ -1,3 +1,3 @@
 .env
-.next/status/webpack
-.next/static/runtime
+.next
+node_modules
