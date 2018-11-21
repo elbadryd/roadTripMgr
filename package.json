@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/SerenitySoonish/roadTripMgr#readme",
   "dependencies": {
+    "@zeit/next-css": "^1.0.1",
     "dotenv": "^6.1.0",
     "express": "^4.16.4",
     "next": "^7.0.2",
@@ -28,10 +29,14 @@
     "pg-hstore": "^2.3.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
+    "react-mapbox-autocomplete": "^0.2.3",
+    "react-places-autocomplete": "^7.2.0",
+    "react-redux": "^5.1.1",
     "sequelize": "^4.41.2",
     "sequelize-cli": "^5.3.0"
   },
   "devDependencies": {
+    "css-loader": "^1.0.1",
     "eslint": "^5.9.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
